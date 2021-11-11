@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <h1>Jquery Training</h1>
+    <button class="buttonOne">Button One</button>
+    <button class="continue">Test</button>
+    <script>
+
+        class pQuery {
+            constructor(selector){
+                this.targetElement = document.querySelector(selector);
+            }
+            html(template){
+                this.targetElement.innerHTML = template;
+            }
+        }
+
+      //our own jquery
+      const $$ = (selector) => {
+        //const targetElement = document.querySelector(selector);
+        return new pQuery(selector);
+
+        // return {
+        //    html: (template) => {
+        //        targetElement.innerHTML = template;
+        //    }
+        //}
+      };
+      //$$("button.buttonOne").html("hello");
+      //$$("button.continue").html("Next Steps..."); //double $$ is a function that has a html object
+
+
+      const obj1 = $$('button.test');
+      const obj2 = $$('button.continue');
+      console.log(obj1.html === obj2.html);
+    </script>
+  </body>
+</html>
