@@ -39,12 +39,14 @@
         }
         hide() {
           this.targetElements.forEach((ele) => {
-            ele.style.display = "none";
+            //ele.style.display = "none";
+            ele.style.visibility = 'hidden';
           });
         }
         show(){
           this.targetElements.forEach((ele) => {
-            ele.style.display = "block"
+            //ele.style.display = "block";
+            ele.style.visibility = "visible"
           })
         }
         ajax({ url, success = () => {} }) {
